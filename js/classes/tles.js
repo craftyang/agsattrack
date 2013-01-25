@@ -24,7 +24,7 @@ Copyright 2012 Alex Greenland
 var AGTLES = function() {
 	'use strict';
 	
-	var baseUrl = 'ajax.php?keps=';
+	var baseUrl = '/php/keps/';
 	var _group = '';
     var _groupName = '';
 	var rawKeps = '';
