@@ -116,7 +116,6 @@ var AGLISTVIEW = function() {
                     catalognumber: satellite.getCatalogNumber(),
                     ck: satellite.getSelected()
                 }); 
-        
             });
 
             jQuery('#sat-list-grid').datagrid('loadData',data);

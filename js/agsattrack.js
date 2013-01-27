@@ -33,6 +33,7 @@ var Agsattrack = function() {
 	var _initComplete = false; // Don't like this
 	var _speed = 1;
 	var _following = null;
+    var _user;
     
 	function bindEvents() {	
 
@@ -221,6 +222,7 @@ var Agsattrack = function() {
 			 */
 			_observers[0] = new AGOBSERVER(0).init();
             
+            _user = new AGUSER();
 		}
 	};
 };

@@ -74,7 +74,17 @@ var AGVIEWS = (function(element) {
             classname : 'AGAZELVIEW',
             active : false,
             init: false
-        }          
+        },
+        'myaccount' : {
+            classname : 'AGMYACCOUNT',
+            active : false,
+            index: 9
+        },
+        'admin' : {
+            classname : 'AGADMIN',
+            active : false,
+            index: 10
+        }                          
     };
     
     /**

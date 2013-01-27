@@ -61,7 +61,7 @@ var AGUI = function() {
             { name: 'name' }
         ],
         id: 'id',
-        url: 'php/groups/'
+        url: '/elements/getgroups'
     };
     
     var dataAdapter = new jQuery.jqx.dataAdapter(source,
@@ -308,7 +308,7 @@ var AGUI = function() {
 
     function updateSatelliteData(satellite) {
         var catalogNumber = satellite.getCatalogNumber();
-        var url = '/php/satellitedata/' + catalogNumber;
+        var url = 'satellites/getdata?catalogNumber=' + catalogNumber;
         jQuery.getJSON(url, function(data) {
             for ( var i = 0; i < data.length; i++) {
                 jQuery('#' + data[i].field).html(data[i].value);
@@ -401,7 +401,7 @@ var AGUI = function() {
             jQuery('#statusfollowing').html(text);            
         },
 		updateSatelliteInfo : function(catalogNumber) {
-			var url = '/php/satellitedata/' + catalogNumber;
+			var url = 'satellites/getdata?catalogNumber=' + catalogNumber;
 			jQuery.getJSON(url, function(data) {
 				for ( var i = 0; i < data.length; i++) {
 					jQuery('#' + data[i].field).html(data[i].value);
