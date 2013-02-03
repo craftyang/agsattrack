@@ -15,31 +15,22 @@ Copyright 2013 Alex Greenland
  */
  
 var AGUSER = function() {
-    var _loggedIn = false;
+    var _loggedIn = AGISLOGGEDIN;
+    var _admin = AGISADMIN;
     
-    jQuery('#login').form({  
-        url: '/site/login',  
-        onSubmit: function(){  
-            var isValid = $(this).form('validate');
-            return isValid;
-        },  
-        success:function(data){  
-            if (data === '[]') {
-                _loggedIn = true;
-                updateRibbon();
-                jQuery('#dialog-login').dialog('close'); 
-            }
-        }  
-    });
    
-    jQuery('#login-submit').on('click', function(){
-        jQuery('#login').submit();    
-    });
-    
     jQuery(document).bind('agsattrack.login', function(event, selection) {
-        jQuery('#dialog-login').dialog('open');           
+        jQuery('#loginbox').load('/site/login', function(){
+            jQuery('#dialog-login').dialog('open');    
+        });      
     });
 
+    jQuery(document).bind('agsattrack.register', function(event, selection) {
+        jQuery('#loginbox').load('/site/register', function(){
+            jQuery('#dialog-register').dialog('open');    
+        });      
+    });
+        
     jQuery(document).bind('agsattrack.logout', function(event, selection) {
         jQuery.getJSON('/site/logout', function(data) {
             _loggedIn = false;
@@ -55,7 +46,11 @@ var AGUSER = function() {
                 jQuery('#user-register').hide();
                 jQuery('#user-myaccount').show();
                 jQuery('#ribbon-tab-header-9').show();
-                jQuery('#ribbon-tab-header-10').show();
+                if (_admin) {
+                    jQuery('#ribbon-tab-header-10').show();
+                } else {
+                    jQuery('#ribbon-tab-header-10').hide();
+                }
                 break;
                 
             case false:

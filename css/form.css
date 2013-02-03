@@ -43,8 +43,12 @@ div.form textarea,
 div.form select
 {
 	margin: 0.2em 0 0.5em 0;
+    padding: 5px;
 }
 
+div.form input[type=text], div.form input[type=password] {
+    width: 250px;
+}
 div.form fieldset
 {
 	border: 1px solid #DDD;
@@ -56,7 +60,7 @@ div.form fieldset
 div.form label
 {
 	font-weight: bold;
-	font-size: 0.9em;
+	font-size: 1.2em;
 	display: block;
 }
 
@@ -161,4 +165,9 @@ div.wide.form .buttons, div.wide.form .hint, div.wide.form .errorMessage
 {
 	clear: left;
 	padding-left: 110px;
+}
+
+#LoginForm_rememberMe {
+    float: left;
+    margin-right: 10px;
 }

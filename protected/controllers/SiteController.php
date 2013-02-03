@@ -27,7 +27,7 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-        
+      // var_dump( Yii::app()->user->isAdmin()); die(); 
 /*
 $auth=Yii::app()->authManager;
  
@@ -77,11 +77,10 @@ die();
 	public function actionLogin()
 	{
 		$model=new LoginForm;
-        $this->layout='main-display';
+        $this->layout='ajax-login-layout';
 
 		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
-		{
+		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
@@ -91,8 +90,9 @@ die();
 		{
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
+			if($model->validate() && $model->login()) {
 				$this->redirect(Yii::app()->user->returnUrl);
+            }
 		}
 		// display the login form
 		$this->render('login',array('model'=>$model));

@@ -149,22 +149,112 @@ class AdminController extends Controller {
     }
                     
 	public function actionUpdateCatalog() {
-        
+        $result = 'no';
         if(Yii::app()->user->checkAccess('updateCatalog')) {
             set_time_limit(0);
             $catalog = $this->getData($this->catalogUrl);
             $this->parseCatalog($catalog);
-        } else {
-            die('nope');
+            $result = 'yes';
         }
-		$this->render('updateCatalog');
-	}
+        header('Content-Type: application/json; charset="UTF-8"');
+        echo json_encode($result);
+        Yii::app()->end();
+    }
 
 	public function actionUpdateElements()
 	{
 		$this->render('updateElements');
 	}
 
+    public function actionGetCatalog() {
+        if(isset($_POST['page'])) {
+            $page = intval($_POST['page']);
+        } else {
+            $page = 1;
+        }
+        if(isset($_POST['rows'])) {
+            $rows = intval($_POST['rows']);
+        } else {
+            $rows = 10;
+        }
+        
+        $criteria = new CDbCriteria();
+        $criteria->limit = $rows;
+        $criteria->offset = ($page-1) * $rows;
+                    
+        $rows = Catalog::model()->findAll($criteria);
+        $totalRows = Catalog::model()->count();
+        
+        $catalogRows = Array();
+        foreach ($rows as $row) {
+            $rowData = Array();
+            foreach($row as $key=>$value) {
+                $rowData[$key] = $value;
+            }
+            $catalogRows[] = $rowData;
+        }
+        $data = Array(
+            'total' => $totalRows,
+            'rows' => $catalogRows
+        );
+        $this->renderPartial('/ajax', Array('data'=>$data));              
+    }
+
+    public function actionUpdateGroup($group, $name) {
+        if(Yii::app()->user->checkAccess('updateGroups')) {        
+            $groupRecord = Tlegroups::model()->findByPk($group);
+            if ($groupRecord === NULL) {
+                $groupRecord = new Tlegroups();
+            }
+            $groupRecord->id = $group;
+            $groupRecord->name = $name;
+            $groupRecord->save();
+            $result = true;
+        } else {
+            $result = false;
+        }
+        $data = Array(
+            'result' => $result
+        );                
+        $this->renderPartial('/ajax', Array('data'=>$data));    
+    }
+        
+    public function actionDeleteGroup($group) {
+        if(Yii::app()->user->checkAccess('updateGroups')) {        
+            $groupRecord = Tlegroups::model()->findByPk($group);
+            if ($groupRecord !== NULL) {
+                $result = true;
+                $groupRecord->delete(); 
+            } else {
+                $result = false;
+            }
+        } else {
+            $result = false;
+        }
+        $data = Array(
+            'result' => $result
+        );                
+        $this->renderPartial('/ajax', Array('data'=>$data));       
+    }
+    
+    public function actionGetGroups() {
+        
+        $groups = Tlegroups::model()->findAll();
+        $totalRows = Tlegroups::model()->count();        
+        $groupData = Array();
+        foreach ($groups as $group) {
+            $groupData[] = Array(
+                'id'=>$group->id,
+                'name'=>$group->name
+            ); 
+        }
+        $data = Array(
+            'total' => $totalRows,
+            'rows' => $groupData
+        );                
+        $this->renderPartial('/ajax', Array('data'=>$groupData));  
+    }
+        
 	// Uncomment the following methods and override them if needed
 	/*
 	public function filters()

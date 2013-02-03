@@ -198,8 +198,9 @@
                             el.click(function(e){
                                 if (!el.hasClass('disabled')) {
                                     var event = el.attr('data-event');
+                                    var eventParam = $(this).attr('data-event-param');
                                     if (typeof event !== 'undefined') {
-                                        jQuery(document).trigger(event);
+                                        jQuery(document).trigger(event, eventParam);
                                     }
                                 }                                
                             });

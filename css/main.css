@@ -360,22 +360,8 @@ p.description {
     padding: 10px;   
 }
 
-#loginbox #username {
-    border: 1px solid #D5D4BE;
-    color: #807F6E;
-    font-family: Arial,Helvetica,sans-serif;
-    font-size: 12px;
-    padding: 9px 7px;
-    width: 200px;
-}
-
-#loginbox #password {
-    border: 1px solid #D5D4BE;
-    color: #807F6E;
-    font-family: Arial,Helvetica,sans-serif;
-    font-size: 12px;
-    padding: 9px 7px;
-    width: 200px;
+#loginbox {
+    padding: 20px 20px 0px 20px;
 }
 
 

@@ -41,9 +41,7 @@ class ElementsController extends Controller {
                 'selected' => ($group->default?true:false)
             ); 
         }        
-        header('Content-Type: application/json; charset="UTF-8"');
-        echo json_encode($groupData);
-        Yii::app()->end();
+        $this->renderPartial('/ajax', Array('data'=>$groupData));  
 	}
 
 	public function actionIndex() {

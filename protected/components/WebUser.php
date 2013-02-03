@@ -7,7 +7,11 @@ class WebUser extends CWebUser {
  
   function isAdmin(){
     $user = $this->loadUser(Yii::app()->user->id);
-    return intval($user->role) == 1;
+    if ($user === null) {
+        return 0;
+    } else {
+        return intval($user->role) == 1;
+    }
   }
  
   // Load user model.
