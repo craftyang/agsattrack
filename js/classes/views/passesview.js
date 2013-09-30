@@ -289,9 +289,9 @@ var AGPASSESVIEW = function() {
     * Create the default views
     */
     function setDefaultViews() {
-        _bottomLeft = AGVIEWS.getNewView(AGSETTINGS.getPassesBottomLeftView(),'passbottomleft');
+        _bottomLeft = AGVIEWS.getNewView(AGSETTINGS.getViewSettings('passes').bottomleft,'passbottomleft');
         _bottomLeft.init(AGVIEWS.modes.SINGLE);
-        _bottomRight = AGVIEWS.getNewView(AGSETTINGS.getPassesBottomRightView(),'passbottomright');
+        _bottomRight = AGVIEWS.getNewView(AGSETTINGS.getViewSettings('passes').bottomright,'passbottomright');
         _bottomRight.init(AGVIEWS.modes.SINGLE);       
     }
     

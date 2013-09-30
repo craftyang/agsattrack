@@ -1,3 +1,17 @@
+.options-window th {
+    text-align: right;
+    font-weight: bold;
+}
+
+.options-window th.thleft {
+    text-align: left;
+    font-weight: bold;
+}
+
+.options-window .tabs-panels {
+    border-width: 0px !important;    
+}
+
 .dxwindownosatselected {
     text-align: center;
 }
@@ -44,4 +58,18 @@
 
 #geoerror .errorcode {
     font-weight: bold;
+}
+
+.options-icon {
+    background-image: url("/images/options.png");
+}
+
+fieldset {
+    margin: 8px;
+    border: 1px solid silver;
+    padding: 8px;    
+    border-radius: 4px;
+}
+legend{
+    padding: 2px;    
 }

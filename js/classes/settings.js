@@ -49,8 +49,6 @@ var AGSETTINGS = (function() {
         autoAddSats: true,
         defaultTleGroup: 'amateur',
         debugView: false,
-        passesbl: 'polar',
-        passesbr: 'sky',
         observer: {
             auto: true,
             enabled: true,
@@ -108,7 +106,13 @@ var AGSETTINGS = (function() {
                 showCities: false,
                 cityPopulation: 2,
                 cityFontSize: 12,
-                cityLabelColour: 'ffffff' 
+                cityLabelColour: 'ffffff',
+                followobsheight: 1000, 
+                followsatheight: 1000 
+            },
+            passes : {
+                bottomleft: 'polar',
+                bottomright: 'sky'
             }
         }
     };

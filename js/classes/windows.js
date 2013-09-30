@@ -29,7 +29,13 @@ var AGWINDOWMANAGER = (function() {
             loaded: false,
             instance: null,
             element : null
-        }        
+        },
+        'options' : {
+            classname : 'AGOPTIONSWINDOW',
+            loaded: false,
+            instance: null,
+            element : null
+        }         
     };
     
     function showWindow(name, elementId, params) {

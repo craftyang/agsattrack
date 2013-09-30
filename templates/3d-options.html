@@ -1,0 +1,211 @@
+        <div class="easyui-layout options-window" data-options="fit:true">
+            <div data-options="region:'center',fit:true">
+                <div class="easyui-tabs">
+                    <div title="General" style="padding:10px">
+                        <div id="3d-option-views-providers">  
+                            <fieldset>
+                                <legend>Views And Providers</legend>
+                                <table class="form-table">
+                                    <tr valign="top">
+                                        <th width="20%">Default View :</th>
+                                        <td>
+                                            <select class="options-cb" id="options-3d-view">
+                                                <option value="threed">3D View</option>
+                                                <option value="twod">2D View</option>
+                                                <option value="twopointfived">2.5D View</option>
+                                            </select>                                            
+                                        </td>
+                                        <th width="20%">Default Provider :</th>
+                                        <td>
+                                            <select class="options-cb" id="options-3d-provider">
+                                                <option value="staticimage">Static Image</option>
+                                                <option value="bing">Bing Maps</option>
+                                                <option value="osm">Open Street Map</option>
+                                                <option value="arcgis">Arc Gis</option>
+                                            </select>                                            
+                                        </td>                                        
+                                    </tr>
+                                    <tr valign="top">
+                                        <th width="20%">Use Terrain Provider :</th>
+                                        <td colspan="3">
+                                            <input type="checkbox" id="options-3d-terrainprovider" value="on" class="options-cb">
+                                            <p class="description">The Terrain Provider will show elevation data on the 3D view.</p>
+                                        </td>                                       
+                                    </tr>
+                                </table>
+                            </fieldset>                              
+                        </div>
+
+                        <div id="3d-option-static-map">
+                            <fieldset id="3d-options-static-map-fieldset">
+                                <legend>Static Map Image</legend>                        
+                                <table class="form-table">
+                                    <tr valign="top">
+                                        <th width="20%">Static Map Image :</th>
+                                        <td>
+                                            <select class="options-cb" id="options-3d-view-staticimage">
+                                                <option value="land_ocean_ice_lights_2048.jpg">Land Ocean Ice Lights 2048</option>
+                                                <option value="land_ocean_ice_lights_512.jpg">Land Ocean Ice Lights 512</option>
+                                                <option value="NE2_50M_SR_W_2048.jpg">NE2 50M SR W 2048</option>
+                                                <option value="NE2_50M_SR_W_4096.jpg">NE2 50M SR W 4096</option>
+                                            </select>
+                                            <p class="description">Select the static map image to use in the 3D view.</p>
+
+                                        </td>
+                                        <td>
+                                            <img src="#" id="options-3d-view-staticimage-image" width="200">
+                                        </td>
+                                    </tr>                                                    
+                                </table>
+                            </fieldset>                            
+                        </div>                                               
+                    </div>
+                    <div title="Satellites" style="padding:10px">
+                        <div id="3d-options-satellites">
+                            <fieldset>
+                                <legend>Satellites</legend>                            
+                                <table class="form-table">
+                                    <tr valign="top">
+                                        <th width="20%"></th>
+                                        <th class="thleft">Unselected</th>
+                                        <th colspan="1" class="thleft">Selected</th>
+                                    </tr>
+                                    <tr valign="top">
+                                        <th>Icon :</th>
+                                        <td>
+                                            <select class="options-cb" id="options-3d-sat-icon-unselected">
+                                                <option value="1" data-imagesrc="/images/satellites/satellite0-32.png">Icon 1</option>
+                                                <option value="2" data-imagesrc="/images/satellites/satellite1-32.png">Icon 2</option>
+                                            </select>                                            
+                                        </td>
+                                        <td>
+                                            <select class="options-cb" id="options-3d-sat-icon-selected">
+                                                <option value="1" data-imagesrc="/images/satellites/satellite0-32.png">Icon 1</option>
+                                                <option value="2" data-imagesrc="/images/satellites/satellite1-32.png">Icon 2</option>
+                                            </select>                                            
+                                        </td>
+                                    </tr>
+                                    <tr valign="top">
+                                        <th>Icon Size :</th>
+                                        <td>
+                                            <select class="options-cb" id="options-3d-sat-icon-unselected-size">
+                                                <option value="16">16 Pixels</option>
+                                                <option value="24">24 Pixels</option>
+                                                <option value="32">32 Pixels</option>
+                                                <option value="64">64 Pixels</option>
+                                                <option value="128">128 Pixels</option>
+                                                <option value="256">256 Pixels</option>
+                                            </select>                                          
+                                        </td>
+                                        <td>
+                                            <select class="options-cb" id="options-3d-sat-icon-selected-size">
+                                                <option value="16">16 Pixels</option>
+                                                <option value="24">24 Pixels</option>
+                                                <option value="32">32 Pixels</option>
+                                                <option value="64">64 Pixels</option>
+                                                <option value="128">128 Pixels</option>
+                                                <option value="256">256 Pixels</option>
+                                            </select>                                          
+                                        </td>
+                                    </tr>
+                                    <tr valign="top">
+                                        <th>Label Size :</th>
+                                        <td>
+                                            <select class="options-cb" id="options-3d-sat-label-unselected-size">
+                                                <option value="8">8 Pixels</option>
+                                                <option value="10">10 Pixels</option>
+                                                <option value="12">12 Pixels</option>
+                                                <option value="14">14 Pixels</option>
+                                                <option value="16">16 Pixels</option>
+                                                <option value="18">18 Pixels</option>
+                                                <option value="20">20 Pixels</option>
+                                                <option value="22">22 Pixels</option>
+                                                <option value="24">24 Pixels</option>
+                                            </select>                                          
+                                        </td>
+                                        <td>
+                                            <select class="options-cb" id="options-3d-sat-label-selected-size">
+                                                <option value="8">8 Pixels</option>
+                                                <option value="10">10 Pixels</option>
+                                                <option value="12">12 Pixels</option>
+                                                <option value="14">14 Pixels</option>
+                                                <option value="16">16 Pixels</option>
+                                                <option value="18">18 Pixels</option>
+                                                <option value="20">20 Pixels</option>
+                                                <option value="22">22 Pixels</option>
+                                                <option value="24">24 Pixels</option>
+                                            </select>                                         
+                                        </td>
+                                    </tr>
+                                    <tr valign="top">
+                                        <th>Label Colour :</th>
+                                        <td><input class="color polarcolour" id="3d-label-colour-unselected" type="text" value="" /></td>
+                                        <td><input class="color polarcolour" id="3d-label-colour-selected" type="text" value="" /></td>
+                                    </tr>
+                                </table>
+                            </fieldset> 
+                        </div>
+                        
+                        <div id="3d-view-following-options">
+                            <fieldset>
+                                <legend>Following Options</legend>                          
+                                <table class="form-table">
+                                    <tr valign="top">
+                                        <th>Height Above Observer Location</th>
+                                        <td>
+                                            <input id="options-3d-view-followobs-height" class="easyui-numberspinner" style="width: 60px;" data-options="min:0,max:1000,editable:false" value="1">                                        
+                                            <p class="description">Select the height above the observer location, this is in meters.</p>
+                                        </td>
+                                    </tr>
+                                    <tr valign="top">
+                                        <th>Height Above Satellite</th>
+                                        <td>
+                                            <input id="options-3d-view-followsat-height" class="easyui-numberspinner" style="width: 60px;" required="required" data-options="min:0,max:10000,editable:false">                                        
+                                            <p class="description">Select the height above the satellite location, this is in meters.</p>
+                                        </td>                                        
+                                    </tr>                                    
+                                </table> 
+                            </fieldset>                       
+                        </div>
+                    </div>
+                    <div title="Cities" style="padding:10px">
+                        <div id="3d-options-cities">                      
+                            <table class="form-table">
+                                <tr valign="top">
+                                    <th>Show Cities :</th>
+                                    <td>
+                                        <input id="options-3d-view-show-cities" type="checkbox" class="options-cb" value="on">                                      
+                                        <p class="description">Enable this option to show cities on the 3d view.</p>
+                                    </td>
+                                </tr>
+                                <tr valign="top">
+                                    <th>Font Size :</th>
+                                    <td>
+                                        <input id="options-3d-view-city-font-size" type="text" size="3" class="easyui-numberspinner" data-options="min:8,max:30,increment:1,editable:true,width:60"> px                                      
+                                        <p class="description">The font size for the city labels in pixels</p>
+                                    </td>                                        
+                                </tr>                                
+                                <tr valign="top">
+                                    <th>Population Limit :</th>
+                                    <td>
+                                        <input id="options-3d-view-city-pop-limit" class="easyui-numberspinner"  required="required" data-options="min:0,max:10,increment:0.1,precision:2,editable:true,width:60"> Million                                      
+                                        <p class="description">Cities will only be displayed if their population is above or equal to this limit.</p>
+                                    </td>
+                                </tr>
+                                <tr valign="top">
+                                    <th>Label Colour :</th>
+                                    <td>
+                                        <input id="options-3d-view-city-font-colour" type="text" class="color">                                      
+                                        <p class="description">The label colour</p>
+                                    </td>                                         
+                                </tr>                                                                                                                          
+                            </table>                                                     
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-options="region:'south',border:false" style="text-align:right;padding:5px 0px 10px 0px;">
+                <a class="easyui-linkbutton options-save" data-options="iconCls:'icon-save'">Save</a>
+                <a class="easyui-linkbutton options-cancel" data-options="iconCls:'icon-cancel'">Cancel</a>
+            </div>
+        </div>

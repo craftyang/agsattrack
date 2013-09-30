@@ -328,6 +328,11 @@ var AG3DVIEW = function(element) {
             }
         }
     });  
+       
+    jQuery(document).bind('agsattrack.3dviewsettings', function(event, state) {
+        AGWINDOWMANAGER.showWindow('options', {type: '3d'}); 
+    });        
+        
         
     function showLocationWindow() {
         AGWINDOWMANAGER.showWindow('dx');     

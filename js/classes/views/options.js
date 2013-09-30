@@ -134,8 +134,8 @@ var AGOPTIONS = function() {
         } else {
             jQuery('#options-3d-view-show-cities').prop('checked', false);
         }
-        jQuery('#options-3d-view-city-pop-limit').val(AGSETTINGS.getViewSettings('threed').cityPopulation);
-        jQuery('#options-3d-view-city-font-size').val(AGSETTINGS.getViewSettings('threed').cityFontSize);
+        jQuery('#options-3d-view-city-pop-limit').numberspinner('setValue', AGSETTINGS.getViewSettings('threed').cityPopulation);
+        jQuery('#options-3d-view-city-font-size').numberspinner('setValue', AGSETTINGS.getViewSettings('threed').cityFontSize);
         jQuery('#options-3d-view-city-font-colour')[0].color.fromString(AGSETTINGS.getViewSettings('threed').cityLabelColour);
 
                        
@@ -195,8 +195,7 @@ var AGOPTIONS = function() {
     function setThreedStaticImage(image) {
         jQuery('#options-3d-view-staticimage option[value="' + image + '"]').attr('selected', true);
         jQuery('#options-3d-view-staticimage-image').attr('src','images/maps/' + image);
-        
-        
+  
     }
     /**
     * End 3D view functions

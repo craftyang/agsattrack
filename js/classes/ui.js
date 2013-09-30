@@ -133,7 +133,10 @@ var AGUI = function() {
     });    
     jQuery('#help-help').click(function() {
         jQuery('#help-window').window('open');
-    }); 
+    });
+    jQuery('#options-test').click(function() {
+        AGWINDOWMANAGER.showWindow('options', {type: '3d'}); 
+    });      
     jQuery('.tree-help-item').on('click', function(e){
         e.preventDefault();
         var href = jQuery(e.target).attr('href');

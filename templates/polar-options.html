@@ -1,0 +1,56 @@
+<div class="easyui-layout options-window" data-options="fit:true">
+    <div data-options="region:'center',fit:true">
+        <table width="100%">
+            <tr>
+                <td rowspan="2" width="50%" valign="top">
+                    <h3>View Colours</h3>
+                    <table width="100%">
+                        <tr>
+                            <th width="50%">Background Colour</th>
+                            <td width="50%"><input class="color polarcolour" id="polar-background-color" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                            <th width="50%">Border Colour</th>
+                            <td width="50%"><input class="color polarcolour" id="polar-border-color" type="text" value="" /></td>
+                        </tr>                                                
+                        <tr>
+                            <th width="50%">Gradient Start</th>
+                            <td width="50%"><input class="color polarcolour" id="polar-gradient-start" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                            <th width="50%">Gradient End</th>
+                            <td width="50%"><input class="color polarcolour" id="polar-gradient-end" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                            <th width="50%">Grid Colour</th>
+                            <td width="50%"><input class="color polarcolour" id="polar-grid" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                            <th width="50%">Text Colour</th>
+                            <td width="50%"><input class="color polarcolour" id="polar-text" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                            <th width="50%">Degree Text Colour</th>
+                            <td width="50%"><input class="color polarcolour" id="polar-degrees-text" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                            <th width="50%">Reset Colours To Defaults</th>
+                            <td width="50%"><button id="polar-reset-colours">Default</button></td>
+                        </tr>                                                  
+                    </table>
+
+                </td>
+                <td width="50%">
+                    <div id="polar-preview" style="width:400px; height:400px"></div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div data-options="region:'south',border:false" style="text-align:right;padding:5px 0px 10px 0px;">
+        <a class="easyui-linkbutton" data-options="iconCls:'icon-save'" href="javascript:void(0)" onclick="javascript:alert('ok')">Ok</a>
+        <a class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" href="javascript:void(0)" onclick="javascript:alert('cancel')">Cancel</a>
+    </div>
+</div>
