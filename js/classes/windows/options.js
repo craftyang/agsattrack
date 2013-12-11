@@ -71,8 +71,6 @@ var AGOPTIONSWINDOW = function(element, params) {
         } else {
             _currentOptions.classInfo.classInstance[_currentOptions.classInfo.init]();    
         }
-
-       
     }
     
     setupOptionsWindow(params);
